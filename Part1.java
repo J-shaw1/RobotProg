@@ -2,6 +2,9 @@ import lejos.nxt.Button;
 import lejos.robotics.RegulatedMotor;
 import lejos.robotics.navigation.DifferentialPilot;
 
+/**
+ * Class for part 1, make the robot spin, and when a button is pressed it will start driving in a square.
+ */
 public class Part1 {
 
 	public static void main(String[] args) {

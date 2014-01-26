@@ -4,6 +4,9 @@ import lejos.nxt.TouchSensor;
 import lejos.robotics.RegulatedMotor;
 import lejos.robotics.navigation.DifferentialPilot;
 
+/**
+ * The bump and turn class, using while loops to detect events
+ */
 public class Part2a {
 
 	public static void main(String[] args) {

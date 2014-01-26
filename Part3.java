@@ -4,6 +4,9 @@ import lejos.nxt.TouchSensor;
 import lejos.nxt.UltrasonicSensor;
 import lejos.robotics.navigation.DifferentialPilot;
 
+/**
+ * The class for part 3, uses while loops to detect events and read the sensor
+ */
 public class Part3 {
 
 	public static void main(String[] args) {
