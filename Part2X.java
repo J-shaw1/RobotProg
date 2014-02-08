@@ -5,13 +5,13 @@ import lejos.nxt.SensorPortListener;
 import lejos.robotics.navigation.DifferentialPilot;
 import lejos.util.Delay;
 
-public class Part1b {
+public class Part2X {
 
 	private DifferentialPilot pilot;
 	private LightSensor l1;
 	private LightSensor r1;
 
-	public Part1b() {
+	public Part2X() {
 		super();
 		this.pilot = RobotConfigs.getPilot();
 		this.l1 = RobotConfigs.getLeftlightsensor();
@@ -27,7 +27,10 @@ public class Part1b {
 		System.out.println(RobotConfigs.getRightmotor().getMaxSpeed());
 		
 		while (true) {
-			if (l1.getLightValue() < 70) {
+			if((l1.getLightValue() < 70) && (r1.getLightValue() < 70)){
+				pilot.arc(RobotConfigs.getTrackwidth()/2, 90);
+			}
+			else if (l1.getLightValue() < 70) {
 				//pilot.arc(10, 15);
 				
 				RobotConfigs.getLeftmotor().setSpeed(100);
@@ -45,8 +48,8 @@ public class Part1b {
 				//pilot.forward();
 				
 
-				RobotConfigs.getLeftmotor().setSpeed(400);
-				RobotConfigs.getRightmotor().setSpeed(400);
+				RobotConfigs.getLeftmotor().setSpeed(100);
+				RobotConfigs.getRightmotor().setSpeed(100);
 				RobotConfigs.getLeftmotor().forward();
 				RobotConfigs.getRightmotor().forward();
 				
@@ -76,9 +79,10 @@ public class Part1b {
 
 	public static void main(String[] args) {
 		Button.waitForAnyPress();
-		Part1b test = new Part1b();
+		Part2X test = new Part2X();
 		test.run();
 
 	}
-
+	
+	
 }
